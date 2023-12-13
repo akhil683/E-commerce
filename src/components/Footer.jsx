@@ -32,7 +32,7 @@ const Footer = () => {
             <li>Projectors</li>
           </ul>
         </div>
-        <div lassName='sm:max-w-[200px]'>
+        <div className='sm:max-w-[200px]'>
           <h4 className='text-xl text-black'>Pages</h4>
           <ul>
             <li>Home</li>

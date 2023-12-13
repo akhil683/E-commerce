@@ -6,12 +6,14 @@ import { CgShoppingCart } from "react-icons/cg";
 import { AiOutlineHeart } from "react-icons/ai";
 
 import SearchBox from "./SearchBox";
-import Cart from "../Cart";
+import Cart from "../Cart/Cart";
 import { Context } from "../../utils/context";
 
 const Header = () => {
 
   const [ scrolled, setScrolled ] = useState(false);
+  const [showCart, setShowCart] = useState(true);
+
   const handleScroll = () => {
     const offset = window.scrollY;
     if (offset > 200) {
@@ -26,7 +28,7 @@ const Header = () => {
 
   return (
     <>
-    <header className={`h-16 bg-zinc-900 z-50 text-zinc-100 p-4 ${scrolled ? 'sticky top-0 animate-header' : ''}`}>
+    <header className={`h-16 bg-zinc-900 z-40 text-zinc-100 p-4 ${scrolled ? 'sticky top-0 animate-header' : ''}`}>
       <nav className="flex justify-between items-center max-w-[850px] m-auto">
         <h1 className="text-2xl sm:text-3xl text-green-300">
           OurStore
@@ -41,14 +43,14 @@ const Header = () => {
         <div className="flex gap-4">
           <TbSearch className="text-2xl" />
           <AiOutlineHeart className="text-2xl" />
-          <span className="relative">
-            <CgShoppingCart className="text-2xl" />
+          <span className="relative" onClick={() => setShowCart(true)}>
+            <CgShoppingCart className="text-2xl cursor-pointer" />
             <span className="absolute min-w-[15px] text-center -top-2 -right-2 px-[2.5px] bg-violet-800 rounded-full text-xs">5</span>
           </span>
         </div>
-
       </nav>
     </header>
+  {showCart && <Cart setShowCart={setShowCart} />}
     </>
   )
 }

@@ -1,11 +1,11 @@
-import Cat1 from '../assets/Category/Cat-1.jpg';
-import Cat2 from '../assets/Category/Cat-2.jpg';
-import Cat3 from '../assets/Category/Cat-3.jpg';
-import Cat4 from '../assets/Category/Cat-4.jpg';
+import Cat1 from '../../assets/Category/Cat-1.jpg';
+import Cat2 from '../../assets/Category/Cat-2.jpg';
+import Cat3 from '../../assets/Category/Cat-3.jpg';
+import Cat4 from '../../assets/Category/Cat-4.jpg';
 const Category = () => {
   return (
     <div className='my-12'>
-      <div className='grid md:grid-cols-4 grid-cols-2 gap-4 m-autoa  max-w-[800px]'>
+      <div className='grid md:grid-cols-4 grid-cols-2 gap-4 m-auto  max-w-[800px]'>
         <div>
           <div className='bg-red-400 max-w-[190px] duration-100 hover:scale-110 m-auto rounded-md text-zinc-300 leading-[112px] relative h-28 overflow-hidden'>
             <img src={Cat1} className='absolute h-28 w-full object-cover' alt="" />
